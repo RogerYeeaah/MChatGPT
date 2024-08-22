@@ -1,10 +1,5 @@
-const {
-    Configuration,
-    OpenAIApi
-} = require("openai");
-const {
-    markedHighlight
-} = require('marked-highlight');
+const { Configuration, OpenAIApi } = require("openai");
+const { markedHighlight } = require('marked-highlight');
 const apiKey = process.env.OPENAI_API_KEY;
 const marked = require('marked');
 const hljs = require('highlight.js');
