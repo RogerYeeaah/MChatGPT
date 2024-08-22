@@ -151,6 +151,11 @@ body {
 					transform: translate(0%, -50%);
 				}
 			}
+
+			pre {
+				border-radius: 5px;
+				overflow: hidden;
+			}
 			
 			table {
 				width: 100%;
@@ -195,11 +200,6 @@ body {
 					background-color: #6c7ae0;
 					color: #fff
 				}
-			}
-
-			pre {
-				border-radius: 5px;
-				overflow: hidden;
 			}
 		}
 	}
@@ -269,7 +269,8 @@ body {
               
             .select-items div,.select-selected {
                 color: #ffffff;
-                padding: 4px 16px;
+                padding: 6px 16px;
+                border-radius: 10px;
                 border: 1px solid transparent;
                 border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
                 cursor: pointer;
