@@ -12,14 +12,18 @@ body {
 	padding: 20px;
 	height: 100vh;
 
-	h1 {
-		margin: 0;
-		padding-bottom: 20px;
-		border-bottom: 1px solid lightgray;
-		color: #444444;
-		text-align: center;
-		font-weight: 300;
-	}
+    .top {
+        position: relative;
+        border-bottom: 1px solid lightgray;
+
+        h1 {
+            margin: 0;
+            padding: 10px 0;
+            color: #444444;
+            text-align: center;
+            font-weight: 100;
+        }
+    }
 	
 	.response {
 		height: calc(100% - 153px);
@@ -203,6 +207,7 @@ body {
 	form {
 		display: inline-block;
 		width: 100%;
+        position: relative;
 	
 		input {
 			padding: 0 10px;
@@ -227,5 +232,65 @@ body {
 			line-height: 25px;
 			cursor: pointer;
 		}
+        
+        .customSelect {
+            width: 200px;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            font-family: Arial;
+            font-size: 12px;
+          
+            select {
+                display: none;
+            }
+          
+            .select-selected {
+                background-color: rgb(255, 164, 45);
+                color: #684822 !important;
+            }
+              
+            .select-selected:after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                transform: translate(0, calc(-50% - 2px));
+                right: 10px;
+                width: 0;
+                height: 0;
+                border: 4px solid transparent;
+                border-color: transparent transparent #684822 transparent;
+            }
+              
+            .select-selected.select-arrow-active:after {
+                border-color: #684822 transparent transparent transparent;
+                transform: translate(0, calc(-50% - 0px));
+            }
+              
+            .select-items div,.select-selected {
+                color: #ffffff;
+                padding: 4px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
+            }
+              
+            .select-items {
+                position: absolute;
+                background-color: rgb(206, 206, 206);
+                bottom: 100%;
+                left: 0;
+                right: 0;
+                z-index: 99;
+            }
+              
+            .select-hide {
+                display: none;
+            }
+              
+            .select-items div:hover, .same-as-selected {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
 	}
 }
