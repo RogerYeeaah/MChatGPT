@@ -2,10 +2,10 @@
 refer: https://github.com/popjane/free_chatgpt_api
 
 ```
-npm run dev to start project
+npm run dev
 ```
-or
+ to start project or
 ```
-npm run build to pack this project
+npm run build
 ```
 to bundle your application
