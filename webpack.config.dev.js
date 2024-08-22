@@ -46,10 +46,6 @@ module.exports = {
       {
         test: /\.md$/,
         use: ['html-loader', 'marked-loader']
-      },
-      {
-        test: /\.js$/,
-        use: ['babel-loader'] // 假設你使用了 Babel
       }
     ]
   },
