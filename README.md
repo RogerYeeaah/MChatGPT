@@ -1,4 +1,4 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to My new chatGPT project!
 refer: https://github.com/popjane/free_chatgpt_api
 
 This project has been created using **webpack-cli**, you can now run
