@@ -126,7 +126,7 @@ async function getResponse() {
 				role: message.role,
 				content: message.content
 			}));
-			
+
 			messages.push({ // 添加当前用户输入
 				role: "user",
 				content: userMessage
@@ -182,16 +182,16 @@ function updateChatHistory() {
 	chatBoxElement.innerHTML = conversationHistory.map(message => `
 		<div class="message ${message.role}">
 			${marked.parse(message.content)}
-			${message.model ? "<div class='model'>" + message.model + "</div>" : ""}
+			${message.model ? "<div class='model'>來自 <span>" + message.model + "</span> 的回答</div>" : ""}
 		</div>
 	`).join('');
-	clearBtn.classList.add('active')
+	conversationHistory.length == 0 ? clearBtn.classList.remove('active') : clearBtn.classList.add('active')
 }
 
 function scrollToLastMessage() {
 	setTimeout(() => {
 		const lastMsg = chatBoxElement.lastElementChild?.offsetTop;
-		chatBoxElement.scrollTo(0, lastMsg - 90);
+		chatBoxElement.scrollTo(0, lastMsg - 80);
 	}, 100);
 }
 
