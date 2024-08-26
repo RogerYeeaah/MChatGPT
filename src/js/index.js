@@ -122,13 +122,19 @@ async function getResponse() {
 	try {
 		let chatCompletion
 		if(conversationHistory.length > 0) {
+			const messages = conversationHistory.map(message => ({
+				role: message.role,
+				content: message.content
+			}));
+			
+			messages.push({ // 添加当前用户输入
+				role: "user",
+				content: userMessage
+			});
+		
 			chatCompletion = await openai.createChatCompletion({
 				model: selectedOption.value,
-				messages: conversationHistory.map(message => ({
-					role: message.role,
-					content: message.content
-				})), // 转换 conversationHistory 为符合 messages 参数格式
-				// 其他参数 (如有需要)
+				messages,
 			});
 		} else {
 			chatCompletion = await openai.createChatCompletion({
